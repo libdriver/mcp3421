@@ -122,7 +122,7 @@ typedef struct mcp3421_info_s
 
 /**
  * @brief     initialize mcp3421_handle_t structure
- * @param[in] HANDLE points to an mcp3421 handle structure
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
  * @param[in] STRUCTURE is mcp3421_handle_t
  * @note      none
  */
@@ -130,48 +130,48 @@ typedef struct mcp3421_info_s
 
 /**
  * @brief     link iic_init function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to an iic_init function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to an iic_init function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_IIC_INIT(HANDLE, FUC)            (HANDLE)->iic_init = FUC
 
 /**
  * @brief     link iic_deinit function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to an iic_deinit function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_IIC_DEINIT(HANDLE, FUC)          (HANDLE)->iic_deinit = FUC
 
 /**
  * @brief     link iic_read_cmd function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to an iic_read_cmd function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to an iic_read_cmd function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_IIC_READ_COMMAND(HANDLE, FUC)    (HANDLE)->iic_read_cmd = FUC
 
 /**
  * @brief     link iic_write_cmd function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to an iic_write_cmd function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to an iic_write_cmd function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_IIC_WRITE_COMMAND(HANDLE, FUC)   (HANDLE)->iic_write_cmd = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_DELAY_MS(HANDLE, FUC)            (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to an mcp3421 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to an mcp3421 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_MCP3421_LINK_DEBUG_PRINT(HANDLE, FUC)         (HANDLE)->debug_print = FUC
@@ -189,7 +189,7 @@ typedef struct mcp3421_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an mcp3421 info structure
+ * @param[out] *info pointer to an mcp3421 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -199,7 +199,7 @@ uint8_t mcp3421_info(mcp3421_info_t *info);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic initialization failed
@@ -211,7 +211,7 @@ uint8_t mcp3421_init(mcp3421_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic deinit failed
@@ -224,9 +224,9 @@ uint8_t mcp3421_deinit(mcp3421_handle_t *handle);
 
 /**
  * @brief      read data from the chip once
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *raw points to a raw adc buffer
- * @param[out] *v points to a converted adc buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *raw pointer to a raw adc buffer
+ * @param[out] *v pointer to a converted adc buffer
  * @return     status code
  *             - 0 success
  *             - 1 single read failed
@@ -239,7 +239,7 @@ uint8_t mcp3421_single_read(mcp3421_handle_t *handle, int32_t *raw, double *v);
 
 /**
  * @brief     start the chip reading
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 start continuous read failed
@@ -251,7 +251,7 @@ uint8_t mcp3421_start_continuous_read(mcp3421_handle_t *handle);
 
 /**
  * @brief     stop the chip reading
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 stop continuous read failed
@@ -263,9 +263,9 @@ uint8_t mcp3421_stop_continuous_read(mcp3421_handle_t *handle);
 
 /**
  * @brief      read data from the chip continuously
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *raw points to a raw adc buffer
- * @param[out] *v points to a converted adc buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *raw pointer to a raw adc buffer
+ * @param[out] *v pointer to a converted adc buffer
  * @return     status code
  *             - 0 success
  *             - 1 continuous read failed
@@ -278,8 +278,8 @@ uint8_t mcp3421_continuous_read(mcp3421_handle_t *handle, int32_t *raw, double *
 
 /**
  * @brief     set the adc bit
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] adc_bit is the set adc bit
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] adc_bit set adc bit
  * @return    status code
  *            - 0 success
  *            - 1 set adc bit failed
@@ -291,8 +291,8 @@ uint8_t mcp3421_set_adc_bit(mcp3421_handle_t *handle, mcp3421_bit_t adc_bit);
 
 /**
  * @brief      get the adc bit
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *adc_bit points to an adc bit buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *adc_bit pointer to an adc bit buffer
  * @return     status code
  *             - 0 success
  *             - 1 get adc bit failed
@@ -304,8 +304,8 @@ uint8_t mcp3421_get_adc_bit(mcp3421_handle_t *handle, mcp3421_bit_t *adc_bit);
 
 /**
  * @brief     set the adc pga
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] pga is the set pga
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] pga set pga
  * @return    status code
  *            - 0 success
  *            - 1 set pga failed
@@ -317,8 +317,8 @@ uint8_t mcp3421_set_pga(mcp3421_handle_t *handle, mcp3421_pga_t pga);
 
 /**
  * @brief      get the adc pga
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *pga points to a pga buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *pga pointer to a pga buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pga failed
@@ -341,9 +341,9 @@ uint8_t mcp3421_get_pga(mcp3421_handle_t *handle, mcp3421_pga_t *pga);
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data length
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -355,9 +355,9 @@ uint8_t mcp3421_set_reg(mcp3421_handle_t *handle, uint8_t *buf, uint16_t len);
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data length
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
