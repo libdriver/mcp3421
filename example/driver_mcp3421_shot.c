@@ -92,7 +92,7 @@ uint8_t mcp3421_shot_init(void)
 
 /**
  * @brief      shot example read
- * @param[out] *s points to a converted adc buffer
+ * @param[out] *s pointer to a converted adc buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

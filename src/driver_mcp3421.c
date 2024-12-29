@@ -56,9 +56,9 @@
 
 /**
  * @brief      read bytes
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data length
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -78,9 +78,9 @@ static uint8_t a_mcp3421_iic_read(mcp3421_handle_t *handle, uint8_t *buf, uint16
 
 /**
  * @brief     write bytes
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data length
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -100,7 +100,7 @@ static uint8_t a_mcp3421_iic_write(mcp3421_handle_t *handle, uint8_t *buf, uint1
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic initialization failed
@@ -162,7 +162,7 @@ uint8_t mcp3421_init(mcp3421_handle_t *handle)
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic deinit failed
@@ -214,8 +214,8 @@ uint8_t mcp3421_deinit(mcp3421_handle_t *handle)
 
 /**
  * @brief     set the adc bit
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] adc_bit is the set adc bit
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] adc_bit set adc bit
  * @return    status code
  *            - 0 success
  *            - 1 set adc bit failed
@@ -259,8 +259,8 @@ uint8_t mcp3421_set_adc_bit(mcp3421_handle_t *handle, mcp3421_bit_t adc_bit)
 
 /**
  * @brief      get the adc bit
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *adc_bit points to an adc bit buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *adc_bit pointer to an adc bit buffer
  * @return     status code
  *             - 0 success
  *             - 1 get adc bit failed
@@ -296,8 +296,8 @@ uint8_t mcp3421_get_adc_bit(mcp3421_handle_t *handle, mcp3421_bit_t *adc_bit)
 
 /**
  * @brief     set the adc pga
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] pga is the set pga
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] pga set pga
  * @return    status code
  *            - 0 success
  *            - 1 set pga failed
@@ -341,8 +341,8 @@ uint8_t mcp3421_set_pga(mcp3421_handle_t *handle, mcp3421_pga_t pga)
 
 /**
  * @brief      get the adc pga
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *pga points to a pga buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *pga pointer to a pga buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pga failed
@@ -378,9 +378,9 @@ uint8_t mcp3421_get_pga(mcp3421_handle_t *handle, mcp3421_pga_t *pga)
 
 /**
  * @brief      read data from the chip once
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *raw points to a raw adc buffer
- * @param[out] *v points to a converted adc buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *raw pointer to a raw adc buffer
+ * @param[out] *v pointer to a converted adc buffer
  * @return     status code
  *             - 0 success
  *             - 1 single read failed
@@ -535,9 +535,9 @@ uint8_t mcp3421_single_read(mcp3421_handle_t *handle, int32_t *raw, double *v)
 
 /**
  * @brief      read data from the chip continuously
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *raw points to a raw adc buffer
- * @param[out] *v points to a converted adc buffer
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *raw pointer to a raw adc buffer
+ * @param[out] *v pointer to a converted adc buffer
  * @return     status code
  *             - 0 success
  *             - 1 continuous read failed
@@ -657,7 +657,7 @@ uint8_t mcp3421_continuous_read(mcp3421_handle_t *handle, int32_t *raw, double *
 
 /**
  * @brief     start the chip reading
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 start continuous read failed
@@ -702,7 +702,7 @@ uint8_t mcp3421_start_continuous_read(mcp3421_handle_t *handle)
 
 /**
  * @brief     stop the chip reading
- * @param[in] *handle points to an mcp3421 handle structure
+ * @param[in] *handle pointer to an mcp3421 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 stop continuous read failed
@@ -746,9 +746,9 @@ uint8_t mcp3421_stop_continuous_read(mcp3421_handle_t *handle)
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to an mcp3421 handle structure
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data length
+ * @param[in] *handle pointer to an mcp3421 handle structure
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -772,9 +772,9 @@ uint8_t mcp3421_set_reg(mcp3421_handle_t *handle, uint8_t *buf, uint16_t len)
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to an mcp3421 handle structure
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data length
+ * @param[in]  *handle pointer to an mcp3421 handle structure
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -798,7 +798,7 @@ uint8_t mcp3421_get_reg(mcp3421_handle_t *handle, uint8_t *buf, uint16_t len)
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an mcp3421 info structure
+ * @param[out] *info pointer to an mcp3421 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL

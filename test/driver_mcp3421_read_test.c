@@ -40,7 +40,7 @@ static mcp3421_handle_t gs_handle;        /**< mcp3421 handle */
 
 /**
  * @brief     read test
- * @param[in] times is the test times
+ * @param[in] times test times
  * @return    status code
  *            - 0 success
  *            - 1 test failed
