@@ -10,7 +10,7 @@
 
 The MCP3421 is a single channel low-noise, high accuracy ΔΣ A/D converter with differential inputs and up to 18 bits of resolution in a small SOT-23-6 package.The on-board precision 2.048V reference voltage enables an input range of ±2.048V differentially (Δ voltage = 4.096V). The device uses a two-wire I2C compatible serial interface and operates from a single 2.7V to 5.5V power supply.The MCP3421 device performs conversion at rates of 3.75, 15, 60, or 240 samples per second (SPS) depending on the user controllable configuration bit settings using the two-wire I2C serial interface. This device has an on-board programmable gain amplifier (PGA). The user can select the PGA gain of x1, x2, x4, or x8 before the analog-to-digital conversion takes place. This allows the MCP3421 device to convert a smaller input signal with high resolution. The device has two conversion modes: (a) Continuous mode and (b) One-Shot mode. In One-Shot mode, the device enters a low current standby mode automatically after one conversion. This reduces current consumption greatly during idle periods.The MCP3421 device can be used for various high accuracy analog-to-digital data conversion applications where design simplicity, low power, and small footprint are major considerations.
 
-LibDriver MCP3421 is the full function driver of MCP3421 launched by LibDriver. LibDriver MCP3421 provides continuous mode ADC conversion, single mode ADC conversion and other functions. LibDriver is MISRA compliant.
+LibDriver MCP3421 is a full-featured driver of MCP3421 launched by LibDriver. LibDriver MCP3421 provides continuous mode ADC conversion, single mode ADC conversion and other functions. LibDriver is MISRA compliant.
 
 ### Table of Contents
 
