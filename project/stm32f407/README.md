@@ -70,7 +70,7 @@ We use '\n' to wrap lines.If your serial port assistant displays exceptions (e.g
     mcp3421 (-t read | --test=read) [--times=<num>]  
     ```
 
-8. Run mcp3421 read function, num means read times.
+6. Run mcp3421 read function, num means read times.
 
     ```shell
     mcp3421 (-e read | --example=read) [--times=<num>]  
