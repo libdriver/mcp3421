@@ -104,7 +104,7 @@ find_package(mcp3421 REQUIRED)
     mcp3421 (-t read | --test=read) [--times=<num>]  
     ```
 
-8. Run mcp3421 read function, num means read times.
+6. Run mcp3421 read function, num means read times.
 
     ```shell
     mcp3421 (-e read | --example=read) [--times=<num>]  
